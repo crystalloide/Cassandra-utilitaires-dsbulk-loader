@@ -8,7 +8,7 @@
 * Découvrir les options DSBulk `-url`, `-k`, `-t`, `-m` et plus
 * Explorer plusieurs exemples d'utilisation de DSBulk
 
-_Ce laboratoire pratique est également disponible en anglais sur le site [https://www.datastax.com/learn/cassandra-fundamentals](https://www.datastax.com/learn/cassandra-fundamentals)
+Ce TP est également disponible en anglais sur le site [https://www.datastax.com/learn/cassandra-fundamentals](https://www.datastax.com/learn/cassandra-fundamentals)
 
 #### Rappel pour retrouver les environnements éventuellement précédemment instanciés dans Gitpod : https://gitpod.io/workspaces
 [# Pour afficher les workspaces déjà instanciés si besoin de faire du ménage :](https://gitpod.io/workspaces)
