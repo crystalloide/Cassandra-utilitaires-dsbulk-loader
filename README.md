@@ -13,7 +13,7 @@ Ce TP est également disponible en anglais sur le site [https://www.datastax.com
 #### Rappel pour retrouver les environnements éventuellement précédemment instanciés dans Gitpod : https://gitpod.io/workspaces
 [# Pour afficher les workspaces déjà instanciés si besoin de faire du ménage :](https://gitpod.io/workspaces)
 
-## C'est parti : démmarons l'environnement du TP ici :
+## C'est parti : lançons l'environnement du TP ici :
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/Cassandra-fundamentals-bulk-loading
 )
