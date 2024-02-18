@@ -1,16 +1,19 @@
-# Bulk Loading Large Datasets into Apache Cassandra®
+# Chargement en masse de grands ensembles de données dans Apache Cassandra
 
-## Learn how to use the DSBulk utility to load data from CSV files into Cassandra NoSQL database tables
+## L'utilitaire DSBulk permet de charger des données à partir de fichiers CSV dans les tables de la base de données Cassandra NoSQL
 
-**In this hands-on lab, you will:**
-* Understand DSBulk use cases
-* Use DSBulk commands `load`, `unload` and `count` 
-* Learn about DSBulk options `-url`, `-k`, `-t`, `-m` and more 
-* Explore several examples of using DSBulk
+**Dans ce TP, nous allons :**
+* Comprendre les cas d'utilisation de DSBulk
+* Utiliser les commandes DSBulk `load`, `unload` et `count`
+* Découvrir les options DSBulk `-url`, `-k`, `-t`, `-m` et plus
+* Explorer plusieurs exemples d'utilisation de DSBulk
 
-_This hands-on lab is available on our [https://www.datastax.com/learn/cassandra-fundamentals](https://www.datastax.com/learn/cassandra-fundamentals) site, where you can find many more resources to help you succeed with Apache Cassandra._
+_Ce laboratoire pratique est également disponible en anglais sur le site [https://www.datastax.com/learn/cassandra-fundamentals](https://www.datastax.com/learn/cassandra-fundamentals)
 
-## Start the hands-on lab:
+#### Rappel pour retrouver les environnements éventuellement précédemment instanciés dans Gitpod : https://gitpod.io/workspaces
+[# Pour afficher les workspaces déjà instanciés si besoin de faire du ménage :](https://gitpod.io/workspaces)
+
+## Démarrez l'atelier pratique :
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/Cassandra-fundamentals-bulk-loading
 )
