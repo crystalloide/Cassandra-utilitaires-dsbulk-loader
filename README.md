@@ -1,8 +1,9 @@
+**********************************************************************************************************************************
 # Chargement en masse de grands ensembles de données dans Apache Cassandra
-
+**********************************************************************************************************************************
 ## L'utilitaire DSBulk permet de charger des données à partir de fichiers CSV dans les tables de la base de données Cassandra NoSQL
-
-**Dans ce TP, nous allons :**
+**********************************************************************************************************************************
+** Objectifs du TP : **
 * Comprendre les cas d'utilisation de DSBulk
 * Utiliser les commandes DSBulk `load`, `unload` et `count`
 * Découvrir les options DSBulk `-url`, `-k`, `-t`, `-m` et plus
@@ -19,24 +20,13 @@ Ce TP est également disponible en anglais sur le site [https://www.datastax.com
 )
 
 
-
-##################################################################################################################################
-## Objectifs du TP : 
-## 
-## - Comprendre les cas d'utilisation de DSBulk
-## - Utiliser les commandes DSBulk pour charger, décharger et compter
-## - En savoir plus sur les options DSBulk -url, -k, -t, -m ...
-## - Découvrir plusieurs exemples d'utilisation de DSBulk
-##################################################################################################################################
-
-
+**********************************************************************************************************************************
 ## Cliquer sur new workspace et patienter
+**********************************************************************************************************************************
 
-Chargeur de masse DataStax : 
-DataStax Bulk Loader (DSBulk) est un utilitaire de ligne de commande efficace, flexible, facile à utiliser et gratuit pour Apache Cassandra 
-qui excelle dans le chargement, le déchargement et le comptage des données.
+DataStax Bulk Loader (DSBulk) est un utilitaire de ligne de commande efficace, flexible, facile à utiliser et gratuit pour Apache Cassandra qui excelle dans le chargement, le déchargement et le comptage des données.
  
-Vous devez utiliser DSBulk pour :
+DSBulk permet de :
 
 - Charger les données des fichiers CSV ou JSON dans la base de données
   
