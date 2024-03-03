@@ -3,7 +3,7 @@
 **********************************************************************************************************************************
 ## L'utilitaire DSBulk permet de charger des données à partir de fichiers CSV dans les tables de la base de données Cassandra NoSQL
 **********************************************************************************************************************************
-** Objectifs du TP : **
+## Objectifs du TP : ##
 * Comprendre les cas d'utilisation de DSBulk
 * Utiliser les commandes DSBulk `load`, `unload` et `count`
 * Découvrir les options DSBulk `-url`, `-k`, `-t`, `-m` et plus
