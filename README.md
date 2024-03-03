@@ -1,5 +1,5 @@
 **********************************************************************************************************************************
-# Chargement en masse de grands ensembles de données dans Apache Cassandra
+# Chargement en masse de données volumineuses dans Apache Cassandra
 **********************************************************************************************************************************
 ## L'utilitaire DSBulk permet de charger des données à partir de fichiers CSV dans les tables de la base de données Cassandra NoSQL
 **********************************************************************************************************************************
