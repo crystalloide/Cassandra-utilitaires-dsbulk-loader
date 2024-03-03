@@ -68,9 +68,9 @@ Exemple de paramètres :
     dsbulk help 
 
 
-Connect to Cassandra and create a keyspace and tables :
+Connection à Cassandra et création d'un keyspace et des tables utiles :
 
-✅ Start Cassandra:
+✅ Démarage de Cassandra:
 
     ./cassandra
 
@@ -79,7 +79,7 @@ Connect to Cassandra and create a keyspace and tables :
 
     cqlsh -e "
 
-✅ Create the keyspace and 4 tables using the CQL shell:
+✅ Création du keyspace et des 4 tables en utilisant le shell CQL (SQLSH) :
 
     CREATE KEYSPACE IF NOT EXISTS ks_bulk_loading
     WITH replication = {
@@ -119,7 +119,7 @@ Connect to Cassandra and create a keyspace and tables :
     );"
 
 
-✅ Verify that the four tables have been created:
+✅ Vérification que les 4 tables ont bient été créées :
 
     cqlsh -k ks_bulk_loading -e "DESCRIBE TABLES;"
 
@@ -130,12 +130,13 @@ Connect to Cassandra and create a keyspace and tables :
     movies  ratings_by_movie  ratings_by_user  users
 
 
-✅ Loading users
+✅ Chargement des utilisateurs das la table :
 
-Our first task is to load user data from file users.csv with header fields user_id, gender and age 
-into table users with columns id, gender and age.
+Notre première tâche consiste à charger les données utilisateur à partir du fichier users.csv avec les champs d'en-tête user_id, sexe et âge
 
-✅ Output the first five lines from the file:
+dans les utilisateurs de la table avec les colonnes identifiant, sexe et âge.
+
+✅ Affichage des 5 premères lignes du fichier :
 
     head -n 5 assets/users.csv
 
@@ -149,7 +150,7 @@ into table users with columns id, gender and age.
     u4,F,16
 
 
-✅ Verify that the table is empty:
+✅ Vérification que le table est bien vide initialement :
 
     cqlsh -k ks_bulk_loading -e "SELECT * FROM users LIMIT 5;"
     
@@ -161,10 +162,11 @@ into table users with columns id, gender and age.
     ----+-----+--------
     
 
-Since the file field names and the table column names do no match exactly, we have to map fields to columns explicitly. 
-There are many ways to do this as we demonstrate in the following examples.
+Étant donné que les noms des champs du fichier et les noms des colonnes du tableau ne correspondent pas exactement, nous devons mapper explicitement les champs aux colonnes.
 
-✅ Load data (name-to-name mapping):
+Il existe de nombreuses façons de procéder, comme nous allons le voir dans les exemples suivants.
+
+✅ Chargement des données via le principe "name-to-name mapping" :
 
     dsbulk load -url assets/users.csv \
             -k ks_bulk_loading    \
@@ -201,7 +203,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-✅ Load data (position-to-name mapping):
+✅ Chargement des données via le principe "position-to-name mapping" :
 
     dsbulk load -url assets/users.csv \
             -k ks_bulk_loading    \
@@ -238,7 +240,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 			
 			
 
-✅ Load data (skip the file header and specify the column names):
+✅ Chargement des données en supprimant le header du fichier et en spécifiant le nom de chaque colonne :
 
     dsbulk load -url assets/users.csv \
             -k ks_bulk_loading    \
@@ -274,7 +276,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-✅ Output five rows from the table:
+✅ Affichage de 5 lignes de la table :
 
     cqlsh -k ks_bulk_loading -e "SELECT * FROM users LIMIT 5;"
 
@@ -295,11 +297,11 @@ To resume the current operation, re-run it with the same settings, and add the f
     
 
 
-### Loading movies :
+### Chargement de la table "films" :
 
-Next, load movie data from file movies.csv into table movies.
+Ensuite, on alimente les données sur les films à partir du fichier movies.csv dans la table movies.
 
-✅ Output the first five lines from the file:
+✅ Affichage des 5 premières lignes du fichier en entrée :
 
     head -n 5 assets/movies.csv
 
@@ -315,7 +317,7 @@ Next, load movie data from file movies.csv into table movies.
     m4,Tarzan,1999,84,United States
 
 
-✅ Verify that the table is empty:
+✅ Vérification que le table movies est bien vide initialement :
 
     cqlsh -k ks_bulk_loading -e "SELECT * FROM movies LIMIT 5;"
 
@@ -329,7 +331,7 @@ Next, load movie data from file movies.csv into table movies.
     (0 rows)
 
 
-✅ Load data:
+✅ Chargement des données :
 
     dsbulk load -url assets/movies.csv \
             -k ks_bulk_loading     \
@@ -368,7 +370,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-✅ Output five rows from the table:
+✅ Affichage de 5 lignes de la table :
 
     cqlsh -k ks_bulk_loading -e "SELECT * FROM movies LIMIT 5;"
 
@@ -389,11 +391,11 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-### Loading ratings
+### Chargement des notes sur les films (rationgs) :
 
-Let's load movie ratings from file ratings.csv into tables ratings_by_user and ratings_by_movie.
+Chargeons les classements de films à partir du fichier ratings.csv dans les tables ratings_by_user et ratings_by_movie :
 
-✅ Output the first five lines from the file:
+✅ Affichage des 5 premières lignes du fichier ratings.csv :
 
     head -n 5 assets/ratings.csv
 
@@ -410,7 +412,7 @@ Let's load movie ratings from file ratings.csv into tables ratings_by_user and r
 
 
 
-✅ Verify that the tables are empty:
+✅ Vérification que les tables sont bien vides initialement :
 
     cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_user LIMIT 5;"
 
@@ -418,7 +420,9 @@ Let's load movie ratings from file ratings.csv into tables ratings_by_user and r
 
 ✅ Affichage en retour :	
 
-Notice that the file field names and the table column names match. We do not need to provide an explicit mapping this time.
+Remarque : Les noms des champs du fichier et les noms des colonnes du tableau correspondent. 
+
+Il n'y a donc pas besoin de fournir un mapping explicite cette fois.
 
     gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_user LIMIT 5;"
 
@@ -438,7 +442,7 @@ Notice that the file field names and the table column names match. We do not nee
     (0 rows)
 
 
-✅ Load data into table ratings_by_user:
+✅ Chargement des données dans la table ratings_by_user : 
 
     dsbulk load -url assets/ratings.csv \
             -k ks_bulk_loading      \
@@ -467,7 +471,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-✅ Load data into table ratings_by_movie:
+✅ Chargement des données dans la table ratings_by_movie :
 
     dsbulk load -url assets/ratings.csv \
             -k ks_bulk_loading      \
@@ -495,7 +499,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-✅ Output five rows from each table:
+✅ Affichage de 5 lignes pour chacune des 2 tables :
 
     cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_user LIMIT 5;"
     
@@ -531,12 +535,12 @@ To resume the current operation, re-run it with the same settings, and add the f
     (5 rows)
 
 
-### Unloading and counting : 
+### Déchargement et comptage :
 
-Finally, take a look at how commands unload and count can be used to export data from Cassandra and compute simple row counts.
+Les commandes de déchargement et de comptage peuvent être utilisées pour exporter des données depuis Cassandra et faire des décomptes simples de lignes.
 
 
-✅ Unload all rows from table ratings_by_movie:
+✅ Déchargement complet des lignes de la table ratings_by_movie :
 
     dsbulk unload -url all_ratings    \
               -k ks_bulk_loading  \
@@ -564,7 +568,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-✅ Unload rows from table ratings_by_movie using a query:
+✅ Déchargement complet des lignes de la table ratings_by_movie à l'aide d'une requête :
 
     dsbulk unload -url m267_ratings   \
               -k ks_bulk_loading  \
@@ -598,7 +602,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-✅ Check the resulting CSV files:
+✅ Affichage de 5 lignes de chaque fichier csv résultant :
 
     head -n 5 all_ratings/*
     
@@ -667,7 +671,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-✅ Count all rows in table ratings_by_movie:
+✅ Comptage de toutes les lignes de la table ratings_by_movie :
 
     dsbulk count  -k ks_bulk_loading  \
               -t ratings_by_movie \
@@ -692,7 +696,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-✅ Count rows in table ratings_by_movie using a query:
+✅ Comptage de toutes les lignes de la table "ratings_by_movie" à l'aide d'une requête :
 
     dsbulk count  -k ks_bulk_loading  \
               -query "                \
