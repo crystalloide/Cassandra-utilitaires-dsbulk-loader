@@ -162,8 +162,10 @@ Mais on va faire lancer le cassandra que l'on a installé précédemment en loca
     
 Cela lancera Cassandra comme user Linux authentifié.
 
-✅ Suivi du lancement de Cassandra :
+✅ Suivi du lancement de Cassandra (dans un autre temrinal "bash") :
 
+    cd $GITPOD_REPO_ROOT/cassandra3
+    
     tail -f /workspace/Cassandra-utilitaires-dsbulk-loader/cassandra3/logs/system.log
     
 
