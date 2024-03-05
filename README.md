@@ -107,14 +107,6 @@ Remarque : faire "Y" pour que cette version devienne celle par défaut.
     python2 -V
     
 
-✅ Mise à jour du Path : 
-   
-    echo $PATH
-    export PATH="$GITPOD_REPO_ROOT/cassandra3/bin:$PATH"
-    export PATH="$GITPOD_REPO_ROOT/cassandra3/tools/bin:$PATH"
-    echo $PATH 
-
-
 ✅ Installation de cassandra 3.11.x : 
 
 Téléchargement du tarball avec les binaires sur l'un des sites miroirs de la fondation Apache : 
@@ -143,6 +135,20 @@ Cela correspond donc au "tarball installation location".
     rm apache-cassandra-3.11.16-bin.tar.gz
 
     mv apache-cassandra-3.11.16 cassandra3
+    
+
+✅ On installa CQLSH :
+
+    pip install -U cqlsh
+
+
+✅ Mise à jour du Path : 
+   
+    echo $PATH
+    export PATH="$GITPOD_REPO_ROOT/cassandra3/bin:$PATH"
+    export PATH="$GITPOD_REPO_ROOT/cassandra3/tools/bin:$PATH"
+    echo $PATH 
+
 
 
 ✅ Lancement de Cassandra : 
@@ -171,12 +177,12 @@ Cela lancera Cassandra comme user Linux authentifié.
 
 ✅ Vérification que le noeud Cassandra 3.x est bien lancé :
 
-    bin/nodetool status
+    nodetool status
 
 
 ✅ Vérification de la version de Cassandra (3.11.x attendu):
 
-    bin/nodetool version
+    nodetool version
 
 
 ✅ Affichage en retour : 
@@ -186,7 +192,7 @@ Cela lancera Cassandra comme user Linux authentifié.
 
 ✅ Vérification que le noeud Cassandra 3.11.x est bien opérationnel : 
 
-    bin/nodetool status
+    nodetool status
 
 ✅ Affichage en retour : 
 
@@ -200,13 +206,11 @@ Cela lancera Cassandra comme user Linux authentifié.
 
 ### Création d'un keyspace et d'une table, puis insertion de données :
 
-✅ On installa CQLSH :
-
-    pip install -U cqlsh
-
 
 ✅ Exécution de commandes CQL via CQLsh :
 
+    cd $GITPOD_REPO_ROOT/cassandra3
+    
    Création du keyspace et des 4 tables en utilisant le shell CQL (SQLSH) :
    
     bin/cqlsh -e "
