@@ -110,8 +110,8 @@ Remarque : faire "Y" pour que cette version devienne celle par défaut.
 ✅ Mise à jour du Path : 
    
     echo $PATH
-    export PATH="$GITPOD_REPO_ROOT/apache-cassandra-3/bin:$PATH"
-    export PATH="$GITPOD_REPO_ROOT/apache-cassandra-3/tools/bin:$PATH"
+    export PATH="$GITPOD_REPO_ROOT/cassandra3/bin:$PATH"
+    export PATH="$GITPOD_REPO_ROOT/cassandra3/tools/bin:$PATH"
     echo $PATH 
 
 
