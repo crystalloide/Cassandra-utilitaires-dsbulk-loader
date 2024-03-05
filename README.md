@@ -63,6 +63,16 @@ Exemple de paramètres :
 	query 		requête CQL à utiliser pour le chargement/déchargement/comptage
 	skipRecords Nombre de lignes (autres que d'en-tête) à ignorer lors de la lecture d'un fichier
 
+✅ Installation de dsbulk : 
+      
+      cd /workspace/Cassandra_Migration_Cassandra_4.x/
+      
+      wget -q https://downloads.datastax.com/dsbulk/dsbulk.tar.gz
+      
+      tar -xzf dsbulk.tar.gz
+      
+      rm dsbulk.tar.gz
+
 
 ## Pour en savoir - beaucoup - plus : 
     dsbulk help 
