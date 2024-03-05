@@ -75,12 +75,11 @@ Connection à Cassandra et création d'un keyspace et des tables utiles :
     ./cassandra
 
 
-✅ Connexion en CQL shell:
+✅ Exécution de commandes CQL via CQLsh:
 
+   Création du keyspace et des 4 tables en utilisant le shell CQL (SQLSH) :
+   
     cqlsh -e "
-
-✅ Création du keyspace et des 4 tables en utilisant le shell CQL (SQLSH) :
-
     CREATE KEYSPACE IF NOT EXISTS ks_bulk_loading
     WITH replication = {
       'class': 'NetworkTopologyStrategy', 
