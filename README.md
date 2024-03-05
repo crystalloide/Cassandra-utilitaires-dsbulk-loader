@@ -147,13 +147,14 @@ Cela correspond donc au "tarball installation location".
 
 ✅ Lancement de Cassandra : 
 
-    docker pull cassandra:4.0
-    
-    docker run -p 9042:9042 -d \
+On aurait pu lancer via une image docker :
+ 	docker pull cassandra:4.0
+        docker run -p 9042:9042 -d \
                  --name Cassandra \
                  -v ${PWD}/config/cassandra.yaml:/etc/cassandra/cassandra.yaml \
                  -v ${PWD}/config/cassandra-rackdc.properties:/etc/cassandra/cassandra-rackdc.properties cassandra:4.0
 
+Mais on va faire lancer le cassandra que l'on a installé précédemment en local : 
 
     cd /workspace/Cassandra_Migration_Cassandra_4.x/cassandra3
     
@@ -163,7 +164,7 @@ Cela lancera Cassandra comme user Linux authentifié.
 
 ✅ Suivi du lancement de Cassandra :
 
-    tail -f tail -f /workspace/Cassandra_Migration_Cassandra_4.x/cassandra3/logs/system.log
+    tail -f tail -f /workspace/Cassandra-utilitaires-dsbulk-loader/cassandra3/logs/system.log
     
 
 ✅ Vérification que le noeud Cassandra 3.x est bien lancé :
@@ -202,8 +203,7 @@ Cela lancera Cassandra comme user Linux authentifié.
     pip install -U cqlsh
 
 
-
-✅ Exécution de commandes CQL via CQLsh:
+✅ Exécution de commandes CQL via CQLsh :
 
    Création du keyspace et des 4 tables en utilisant le shell CQL (SQLSH) :
    
