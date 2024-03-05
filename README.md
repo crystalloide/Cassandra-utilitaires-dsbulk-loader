@@ -164,7 +164,7 @@ Cela lancera Cassandra comme user Linux authentifié.
 
 ✅ Suivi du lancement de Cassandra :
 
-    tail -f tail -f /workspace/Cassandra-utilitaires-dsbulk-loader/cassandra3/logs/system.log
+    tail -f /workspace/Cassandra-utilitaires-dsbulk-loader/cassandra3/logs/system.log
     
 
 ✅ Vérification que le noeud Cassandra 3.x est bien lancé :
