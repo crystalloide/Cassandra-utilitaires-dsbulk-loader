@@ -213,7 +213,7 @@ Cela lancera Cassandra comme user Linux authentifié.
     CREATE KEYSPACE IF NOT EXISTS ks_bulk_loading
     WITH replication = {
       'class': 'NetworkTopologyStrategy', 
-      'DC-Houston': 1 };
+      'datacenter1': 1 };
 
     USE ks_bulk_loading;
 
