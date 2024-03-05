@@ -68,11 +68,116 @@ Exemple de paramètres :
     dsbulk help 
 
 
-Connection à Cassandra et création d'un keyspace et des tables utiles :
 
-✅ Démarage de Cassandra:
+**********************************************************************************************************************************
 
-    ./cassandra
+✅ Installation de la version 8 de Java pour cassandra 3.11.x : 
+
+    sdk install java 8.0.345.fx-zulu
+
+Remarque : faire "Y" pour que cette version devienne celle par défaut.
+
+
+✅ Vérification de la version de Java : 
+
+    java -version
+    
+
+✅ Installation de la version 8 de Java pour cassandra 3.11.x : 
+
+    which python2 
+    
+    sudo apt-get install python2
+
+    python2 -V
+    
+
+✅ Mise à jour du Path : 
+   
+    echo $PATH
+    export PATH="$GITPOD_REPO_ROOT/apache-cassandra-3/bin:$PATH"
+    export PATH="$GITPOD_REPO_ROOT/apache-cassandra-3/tools/bin:$PATH"
+    echo $PATH 
+
+
+✅ Installation de cassandra 3.11.x : 
+
+Téléchargement du tarball avec les binaires sur l'un des sites miroirs de la fondation Apache : 
+
+    curl -OL https://downloads.apache.org/cassandra/3.11.16/apache-cassandra-3.11.16-bin.tar.gz
+
+    
+Vérification de l'intégrité du tarball ainsi téléchargé avec le hash en utilisant GPG : 
+
+    gpg --print-md SHA256 apache-cassandra-3.11.16-bin.tar.gz
+    
+Comparaison de la signature du fichier Tarball avec le contenu du fichier SHA256 récupéré en ligne :
+
+    curl -L https://downloads.apache.org/cassandra/3.11.16/apache-cassandra-3.11.16-bin.tar.gz.sha256
+
+
+Décompression du tarball:
+
+    tar xzvf apache-cassandra-3.11.16-bin.tar.gz
+    
+Les fichiers sont extraits dans le répertoire apache-cassandra-3.11.16/
+
+Cela correspond donc au "tarball installation location".
+
+
+    rm apache-cassandra-3.11.16-bin.tar.gz
+
+    mv apache-cassandra-3.11.16 cassandra3
+
+
+✅ Lancement de Cassandra : 
+
+    cd /workspace/Cassandra_Migration_Cassandra_4.x/cassandra3
+    
+    bin/cassandra
+    
+Cela lancera Cassandra comme user Linux authentifié.
+
+✅ Suivi du lancement de Cassandra :
+
+    tail -f tail -f /workspace/Cassandra_Migration_Cassandra_4.x/cassandra3/logs/system.log
+    
+
+✅ Vérification que le noeud Cassandra 3.x est bien lancé :
+
+    bin/nodetool status
+
+
+✅ Vérification de la version de Cassandra (3.11.x attendu):
+
+    bin/nodetool version
+
+
+✅ Affichage en retour : 
+
+    ReleaseVersion: 3.11.16
+
+
+✅ Vérification que le noeud Cassandra 3.11.x est bien opérationnel : 
+
+    bin/nodetool status
+
+✅ Affichage en retour : 
+
+    Datacenter: datacenter1
+    =======================
+    Status=Up/Down
+    |/ State=Normal/Leaving/Joining/Moving
+    --  Address    Load       Tokens       Owns (effective)  Host ID                               Rack
+    UN  127.0.0.1  70.87 KiB  256          100.0%            b10d4523-769e-41d4-aaaf-721ed30f4a22  rack1
+    
+
+### Création d'un keyspace et d'une table, puis insertion de données :
+
+✅ On installa CQLSH :
+
+    pip install -U cqlsh
+
 
 
 ✅ Exécution de commandes CQL via CQLsh:
