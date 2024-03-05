@@ -267,11 +267,11 @@ dans les utilisateurs de la table avec les colonnes identifiant, sexe et âge.
 
 ✅ Affichage des 5 premères lignes du fichier :
 
-    head -n 5 assets/users.csv
+    head -n 5 $GITPOD_REPO_ROOT/assets/users.csv
 
 ✅ Affichage en retour :
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ head -n 5 assets/users.csv
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ head -n 5 $GITPOD_REPO_ROOT/assets/users.csv
     user_id,gender,age
     u1,M,17
     u2,M,12
@@ -297,7 +297,7 @@ Il existe de nombreuses façons de procéder, comme nous allons le voir dans les
 
 ✅ Chargement des données via le principe "name-to-name mapping" :
 
-    dsbulk load -url assets/users.csv \
+    dsbulk load -url $GITPOD_REPO_ROOT/assets/users.csv \
             -k ks_bulk_loading    \
             -t users              \
             -header true          \
@@ -309,7 +309,7 @@ Il existe de nombreuses façons de procéder, comme nous allons le voir dans les
 
 ✅ Affichage en retour :
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url assets/users.csv \
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url $GITPOD_REPO_ROOT/assets/users.csv \
     >             -k ks_bulk_loading    \
     >             -t users              \
     >             -header true          \
@@ -334,7 +334,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 ✅ Chargement des données via le principe "position-to-name mapping" :
 
-    dsbulk load -url assets/users.csv \
+    dsbulk load -url $GITPOD_REPO_ROOT/assets/users.csv \
             -k ks_bulk_loading    \
             -t users              \
             -header true          \
@@ -347,7 +347,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 ✅ Affichage en retour :		
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url assets/users.csv \
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url $GITPOD_REPO_ROOT/assets/users.csv \
     >             -k ks_bulk_loading    \
     >             -t users              \
     >             -header true          \
@@ -371,7 +371,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 ✅ Chargement des données en supprimant le header du fichier et en spécifiant le nom de chaque colonne :
 
-    dsbulk load -url assets/users.csv \
+    dsbulk load -url $GITPOD_REPO_ROOT/assets/users.csv \
             -k ks_bulk_loading    \
             -t users              \
             -header false         \
@@ -383,7 +383,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 ✅ Affichage en retour :		
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url assets/users.csv \
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url $GITPOD_REPO_ROOT/assets/users.csv \
     >             -k ks_bulk_loading    \
     >             -t users              \
     >             -header false         \
@@ -432,12 +432,12 @@ Ensuite, on alimente les données sur les films à partir du fichier movies.csv 
 
 ✅ Affichage des 5 premières lignes du fichier en entrée :
 
-    head -n 5 assets/movies.csv
+    head -n 5 $GITPOD_REPO_ROOT/assets/movies.csv
 
 
 ✅ Affichage en retour :	
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ head -n 5 assets/movies.csv
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ head -n 5 $GITPOD_REPO_ROOT/assets/movies.csv
         
     movie_id,title,year,duration,country
     m1,Once Upon a Time in the West,1968,165,Italy
@@ -462,7 +462,7 @@ Ensuite, on alimente les données sur les films à partir du fichier movies.csv 
 
 ✅ Chargement des données :
 
-    dsbulk load -url assets/movies.csv \
+    dsbulk load -url $GITPOD_REPO_ROOT/assets/movies.csv \
             -k ks_bulk_loading     \
             -t movies              \
             -header true           \
@@ -476,7 +476,7 @@ Ensuite, on alimente les données sur les films à partir du fichier movies.csv 
 
 ✅ Affichage en retour :	
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url assets/movies.csv \
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url $GITPOD_REPO_ROOT/assets/movies.csv \
     >             -k ks_bulk_loading     \
     >             -t movies              \
     >             -header true           \
@@ -526,12 +526,12 @@ Chargeons les classements de films à partir du fichier ratings.csv dans les tab
 
 ✅ Affichage des 5 premières lignes du fichier ratings.csv :
 
-    head -n 5 assets/ratings.csv
+    head -n 5 $GITPOD_REPO_ROOT/assets/ratings.csv
 
 
 ✅ Affichage en retour :	
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ head -n 5 assets/ratings.csv
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ head -n 5 $GITPOD_REPO_ROOT/assets/ratings.csv
     user_id,movie_id,rating
     u289,m1,8
     u957,m1,5
@@ -573,7 +573,7 @@ Il n'y a donc pas besoin de fournir un mapping explicite cette fois.
 
 ✅ Chargement des données dans la table ratings_by_user : 
 
-    dsbulk load -url assets/ratings.csv \
+    dsbulk load -url $GITPOD_REPO_ROOT/assets/ratings.csv \
             -k ks_bulk_loading      \
             -t ratings_by_user      \
             -header true            \
@@ -582,7 +582,7 @@ Il n'y a donc pas besoin de fournir un mapping explicite cette fois.
 
 ✅ Affichage en retour :	
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url assets/ratings.csv \
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url $GITPOD_REPO_ROOT/assets/ratings.csv \
     >             -k ks_bulk_loading      \
     >             -t ratings_by_user      \
     >             -header true            \
@@ -602,7 +602,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 ✅ Chargement des données dans la table ratings_by_movie :
 
-    dsbulk load -url assets/ratings.csv \
+    dsbulk load -url $GITPOD_REPO_ROOT/assets/ratings.csv \
             -k ks_bulk_loading      \
             -t ratings_by_movie     \
             -header true            \
@@ -610,7 +610,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 ✅ Affichage en retour :	
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url assets/ratings.csv \
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ dsbulk load -url $GITPOD_REPO_ROOT/assets/ratings.csv \
     >             -k ks_bulk_loading      \
     >             -t ratings_by_movie     \
     >             -header true            \
