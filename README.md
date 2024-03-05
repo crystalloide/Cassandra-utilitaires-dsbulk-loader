@@ -209,7 +209,7 @@ Cela lancera Cassandra comme user Linux authentifié.
 
    Création du keyspace et des 4 tables en utilisant le shell CQL (SQLSH) :
    
-    cqlsh -e "
+    bin/cqlsh -e "
     CREATE KEYSPACE IF NOT EXISTS ks_bulk_loading
     WITH replication = {
       'class': 'NetworkTopologyStrategy', 
@@ -250,11 +250,11 @@ Cela lancera Cassandra comme user Linux authentifié.
 
 ✅ Vérification que les 4 tables ont bient été créées :
 
-    cqlsh -k ks_bulk_loading -e "DESCRIBE TABLES;"
+    bin/cqlsh -k ks_bulk_loading -e "DESCRIBE TABLES;"
 
 ✅ Affichage en retour :
     
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ cqlsh -k ks_bulk_loading -e "DESCRIBE TABLES;"
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ bin/cqlsh -k ks_bulk_loading -e "DESCRIBE TABLES;"
 
     movies  ratings_by_movie  ratings_by_user  users
 
@@ -281,11 +281,11 @@ dans les utilisateurs de la table avec les colonnes identifiant, sexe et âge.
 
 ✅ Vérification que le table est bien vide initialement :
 
-    cqlsh -k ks_bulk_loading -e "SELECT * FROM users LIMIT 5;"
+    bin/cqlsh -k ks_bulk_loading -e "SELECT * FROM users LIMIT 5;"
     
 ✅ Affichage en retour :
 
-    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ cqlsh -k ks_bulk_loading -e "SELECT * FROM users LIMIT 5;"
+    gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ bin/cqlsh -k ks_bulk_loading -e "SELECT * FROM users LIMIT 5;"
     
      id | age | gender
     ----+-----+--------
@@ -407,7 +407,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 ✅ Affichage de 5 lignes de la table :
 
-    cqlsh -k ks_bulk_loading -e "SELECT * FROM users LIMIT 5;"
+    bin/cqlsh -k ks_bulk_loading -e "SELECT * FROM users LIMIT 5;"
 
 
 ✅ Affichage en retour :	
@@ -448,7 +448,7 @@ Ensuite, on alimente les données sur les films à partir du fichier movies.csv 
 
 ✅ Vérification que le table movies est bien vide initialement :
 
-    cqlsh -k ks_bulk_loading -e "SELECT * FROM movies LIMIT 5;"
+    bin/cqlsh -k ks_bulk_loading -e "SELECT * FROM movies LIMIT 5;"
 
 ✅ Affichage en retour :	
 
@@ -501,7 +501,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 ✅ Affichage de 5 lignes de la table :
 
-    cqlsh -k ks_bulk_loading -e "SELECT * FROM movies LIMIT 5;"
+    bin/cqlsh -k ks_bulk_loading -e "SELECT * FROM movies LIMIT 5;"
 
 
 ✅ Affichage en retour :	
@@ -543,9 +543,9 @@ Chargeons les classements de films à partir du fichier ratings.csv dans les tab
 
 ✅ Vérification que les tables sont bien vides initialement :
 
-    cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_user LIMIT 5;"
+    bin/cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_user LIMIT 5;"
 
-    cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_movie LIMIT 5;"
+    bin/cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_movie LIMIT 5;"
 
 ✅ Affichage en retour :	
 
@@ -630,9 +630,9 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 ✅ Affichage de 5 lignes pour chacune des 2 tables :
 
-    cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_user LIMIT 5;"
+    bin/cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_user LIMIT 5;"
     
-    cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_movie LIMIT 5;"
+    bin/cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_movie LIMIT 5;"
 
 
 ✅ Affichage en retour :	
