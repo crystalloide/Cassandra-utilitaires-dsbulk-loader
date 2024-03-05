@@ -156,7 +156,7 @@ On aurait pu lancer via une image docker :
 
 Mais on va faire lancer le cassandra que l'on a installé précédemment en local : 
 
-    cd /workspace/Cassandra_Migration_Cassandra_4.x/cassandra3
+    cd $GITPOD_REPO_ROOT/cassandra3
     
     bin/cassandra
     
