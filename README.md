@@ -65,14 +65,17 @@ Exemple de paramètres :
 
 ✅ Installation de dsbulk : 
       
-      cd /workspace/Cassandra_Migration_Cassandra_4.x/
+    cd /workspace/Cassandra-utilitaires-dsbulk-loader
       
-      wget -q https://downloads.datastax.com/dsbulk/dsbulk.tar.gz
+    wget -q https://downloads.datastax.com/dsbulk/dsbulk.tar.gz
       
-      tar -xzf dsbulk.tar.gz
+    tar -xzf dsbulk.tar.gz
       
-      rm dsbulk.tar.gz
+    rm dsbulk.tar.gz
 
+    echo $PATH
+    export PATH="$GITPOD_REPO_ROOT/dsbulk-1.11.0/bin:$PATH"
+    echo $PATH 
 
 ## Pour en savoir - beaucoup - plus : 
     dsbulk help 
