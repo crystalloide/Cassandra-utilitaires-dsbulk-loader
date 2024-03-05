@@ -73,8 +73,10 @@ Exemple de paramètres :
       
     rm dsbulk.tar.gz
 
+    mv dsbulk* "$GITPOD_REPO_ROOT/dsbulk"
+    
     echo $PATH
-    export PATH="$GITPOD_REPO_ROOT/dsbulk-1.11.0/bin:$PATH"
+    export PATH="$GITPOD_REPO_ROOT/dsbulk/bin:$PATH"
     echo $PATH 
 
 ## Pour en savoir - beaucoup - plus : 
@@ -144,6 +146,14 @@ Cela correspond donc au "tarball installation location".
 
 
 ✅ Lancement de Cassandra : 
+
+    docker pull cassandra:4.0
+    
+    docker run -p 9042:9042 -d \
+                 --name Cassandra \
+                 -v ${PWD}/config/cassandra.yaml:/etc/cassandra/cassandra.yaml \
+                 -v ${PWD}/config/cassandra-rackdc.properties:/etc/cassandra/cassandra-rackdc.properties cassandra:4.0
+
 
     cd /workspace/Cassandra_Migration_Cassandra_4.x/cassandra3
     
