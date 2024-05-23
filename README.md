@@ -137,7 +137,7 @@ Cela correspond donc au "tarball installation location".
     mv apache-cassandra-3.11.16 cassandra3
     
 
-✅ On installa CQLSH :
+✅ On installe CQLSH :
 
     pip install -U cqlsh
 
@@ -160,7 +160,7 @@ On aurait pu lancer via une image docker :
                  -v ${PWD}/config/cassandra.yaml:/etc/cassandra/cassandra.yaml \
                  -v ${PWD}/config/cassandra-rackdc.properties:/etc/cassandra/cassandra-rackdc.properties cassandra:4.0
 
-Mais on va faire lancer le cassandra que l'on a installé précédemment en local : 
+Mais on va lancer le cassandra que l'on a installé précédemment en local : 
 
     cd $GITPOD_REPO_ROOT/cassandra3
     
