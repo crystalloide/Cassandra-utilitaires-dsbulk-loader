@@ -524,7 +524,7 @@ To resume the current operation, re-run it with the same settings, and add the f
 
 
 
-### Chargement des notes sur les films (rationgs) :
+### Chargement des notes sur les films (ratings) :
 
 Chargeons les classements de films à partir du fichier ratings.csv dans les tables ratings_by_user et ratings_by_movie :
 
