@@ -187,7 +187,7 @@ Cela lancera Cassandra comme user Linux authentifié.
 
 ✅ Affichage en retour : 
 
-    ReleaseVersion: 3.11.16
+    ReleaseVersion: 3.11.19
 
 
 ✅ Vérification que le noeud Cassandra 3.11.x est bien opérationnel : 
