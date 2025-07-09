@@ -263,7 +263,7 @@ Cela lancera Cassandra comme user Linux authentifié.
     movies  ratings_by_movie  ratings_by_user  users
 
 
-✅ Chargement des utilisateurs das la table :
+✅ Chargement des utilisateurs dans la table :
 
 Notre première tâche consiste à charger les données utilisateur à partir du fichier users.csv avec les champs d'en-tête user_id, sexe et âge
 
