@@ -111,30 +111,30 @@ Remarque : faire "Y" pour que cette version devienne celle par défaut.
 
 Téléchargement du tarball avec les binaires sur l'un des sites miroirs de la fondation Apache : 
 
-    curl -OL https://downloads.apache.org/cassandra/3.11.16/apache-cassandra-3.11.16-bin.tar.gz
+    curl -OL https://downloads.apache.org/cassandra/3.11.19/apache-cassandra-3.11.19-bin.tar.gz
 
     
 Vérification de l'intégrité du tarball ainsi téléchargé avec le hash en utilisant GPG : 
 
-    gpg --print-md SHA256 apache-cassandra-3.11.16-bin.tar.gz
+    gpg --print-md SHA256 apache-cassandra-3.11.19-bin.tar.gz
     
 Comparaison de la signature du fichier Tarball avec le contenu du fichier SHA256 récupéré en ligne :
 
-    curl -L https://downloads.apache.org/cassandra/3.11.16/apache-cassandra-3.11.16-bin.tar.gz.sha256
+    curl -L https://downloads.apache.org/cassandra/3.11.19/apache-cassandra-3.11.19-bin.tar.gz.sha256
 
 
 Décompression du tarball:
 
-    tar xzvf apache-cassandra-3.11.16-bin.tar.gz
+    tar xzvf apache-cassandra-3.11.19-bin.tar.gz
     
 Les fichiers sont extraits dans le répertoire apache-cassandra-3.11.16/
 
 Cela correspond donc au "tarball installation location".
 
 
-    rm apache-cassandra-3.11.16-bin.tar.gz
+    rm apache-cassandra-3.11.19-bin.tar.gz
 
-    mv apache-cassandra-3.11.16 cassandra3
+    mv apache-cassandra-3.11.19 cassandra3
     
 
 ✅ On installe CQLSH :
