@@ -553,9 +553,6 @@ Chargeons les classements de films à partir du fichier ratings.csv dans les tab
 
 ✅ Affichage en retour :	
 
-Remarque : Les noms des champs du fichier et les noms des colonnes du tableau correspondent. 
-
-Il n'y a donc pas besoin de fournir un mapping explicite cette fois.
 
     gitpod /workspace/cassandra-fundamentals-bulk-loading (main) $ cqlsh -k ks_bulk_loading -e "SELECT * FROM ratings_by_user LIMIT 5;"
 
@@ -576,6 +573,10 @@ Il n'y a donc pas besoin de fournir un mapping explicite cette fois.
 
 
 ✅ Chargement des données dans la table ratings_by_user : 
+
+Remarque : Les noms des champs du fichier et les noms des colonnes du tableau correspondent. 
+
+Il n'y a donc pas besoin de fournir un mapping explicite cette fois.
 
     dsbulk load -url $GITPOD_REPO_ROOT/assets/ratings.csv \
             -k ks_bulk_loading      \
