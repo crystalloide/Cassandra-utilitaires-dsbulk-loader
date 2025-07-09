@@ -127,7 +127,7 @@ Décompression du tarball:
 
     tar xzvf apache-cassandra-3.11.19-bin.tar.gz
     
-Les fichiers sont extraits dans le répertoire apache-cassandra-3.11.16/
+Les fichiers sont extraits dans le répertoire apache-cassandra-3.11.19/
 
 Cela correspond donc au "tarball installation location".
 
